@@ -38,7 +38,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 
 | 文件 | 行数 | 说明 |
 |---|---|---|
-| `2026.10.29-fast.conf` | 135 | 策略组快速版，兼容 QX 的 `[filter_remote]` |
+| `2026.10.29-fast.conf` | 136 | 策略组快速版，兼容 QX 的 `[filter_remote]`，含 available 故障转移 |
 | `2026.10.29-policy-only.conf` | 122 | 三策略版：仅 DIRECT / REJECT / PROXY |
 | `5.17.conf` | 158 | 旧版策略化配置，保留用于回滚 |
 | `2014.11.01QX.conf` | 220 | 完整版，含更多远程规则源与本地规则，适合细粒度控制 |
