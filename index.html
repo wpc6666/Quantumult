@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#667eea">
 <title>Quantumult X 配置 · 白澤 程</title>
-<meta name="description" content="Quantumult X（圈 X）iOS 代理配置集：策略组快速版与 DIRECT/REJECT/PROXY 三策略版，含远程分流、URL 重写与 MITM。">
+<meta name="description" content="Quantumult X（圈 X）iOS 代理配置集：策略组快速版与三策略 + available 故障转移版，含远程分流、URL 重写与 MITM。">
 <meta name="keywords" content="Quantumult X,圈X,iOS代理,配置文件,分流规则,policy,filter_remote,url rewrite">
 <meta name="author" content="白澤 程">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Quantumult X 配置 · 白澤 程">
-<meta property="og:description" content="Quantumult X（圈 X）iOS 代理配置集：策略组快速版与 DIRECT/REJECT/PROXY 三策略版，含远程分流、URL 重写与 MITM。">
+<meta property="og:description" content="Quantumult X（圈 X）iOS 代理配置集：策略组快速版与三策略 + available 故障转移版，含远程分流、URL 重写与 MITM。">
 <meta property="og:url" content="https://wpc6666.github.io/Quantumult/">
 <meta name="twitter:card" content="summary">
 <style>
@@ -140,7 +140,7 @@ footer p+p{margin-top:6px}
 
 <div class="hero">
   <h1>Quantumult X 配置</h1>
-  <p class="sub">Quantumult X（圈 X）iOS 代理工具配置集。策略组快速版与三策略版，含远程分流、URL 重写与 MITM。</p>
+  <p class="sub">Quantumult X（圈 X）iOS 代理工具配置集。策略组快速版与三策略 + 故障转移版，含远程分流、URL 重写与 MITM。</p>
   <div class="badges">
     <img src="https://img.shields.io/badge/Platform-iOS-000000?logo=apple&logoColor=white" alt="iOS">
     <img src="https://img.shields.io/badge/App-Quantumult%20X-FF6B6B" alt="Quantumult X">
@@ -156,7 +156,7 @@ footer p+p{margin-top:6px}
   <h2>📦 配置文件</h2>
   <div class="grid">
     <div class="feat"><div class="t">🆕 2026.10.29-fast.conf</div><div class="desc">策略组快速版，136 行。保留 AI 自动、地区测速、故障转移和 DIRECT/PROXY 选项。</div></div>
-    <div class="feat"><div class="t">🧩 2026.10.29-policy-only.conf</div><div class="desc">三策略版，122 行。只使用 DIRECT / REJECT / PROXY；SteamCN 直连，其余游戏平台代理。</div></div>
+    <div class="feat"><div class="t">🧩 2026.10.29-policy-only.conf</div><div class="desc">三策略 + available 故障转移版，123 行。SteamCN 直连，其余游戏平台代理。</div></div>
     <div class="feat"><div class="t">📚 5.17.conf</div><div class="desc">旧版策略化配置，158 行，保留用于回滚。</div></div>
     <div class="feat"><div class="t">📚 2014.11.01QX.conf</div><div class="desc">旧版完整配置，220 行，保留用于回滚。</div></div>
   </div>
@@ -176,7 +176,7 @@ footer p+p{margin-top:6px}
   <pre><code><span class="cm"># 策略组快速版</span>
 https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2026.10.29-fast.conf
 
-<span class="cm"># 三策略版（仅 DIRECT / REJECT / PROXY）</span>
+<span class="cm"># 三策略主体 + available 自动故障转移</span>
 https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2026.10.29-policy-only.conf
 
 <span class="cm"># 旧版</span>
@@ -191,7 +191,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
     <tbody>
       <tr><td><code>[general]</code></td><td>全局设置：网络检查、日志级别、超时</td></tr>
       <tr><td><code>[dns]</code></td><td>DNS 服务器与排除列表</td></tr>
-      <tr><td><code>[policy]</code></td><td>策略组：快速版使用；三策略版只使用内置 direct / reject / proxy</td></tr>
+      <tr><td><code>[policy]</code></td><td>策略组：快速版使用；三策略版以 available 自动故障转移兜底</td></tr>
       <tr><td><code>[server_remote]</code></td><td>远程节点订阅源</td></tr>
       <tr><td><code>[filter_remote]</code></td><td>远程分流规则源</td></tr>
       <tr><td><code>[rewrite_remote]</code></td><td>远程 URL 重写规则（部分旧配置使用）</td></tr>
@@ -226,7 +226,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
     <thead><tr><th>文件</th><th>说明</th></tr></thead>
     <tbody>
       <tr><td><code>2026.10.29-fast.conf</code></td><td>策略组快速版</td></tr>
-      <tr><td><code>2026.10.29-policy-only.conf</code></td><td>三策略版：仅 DIRECT / REJECT / PROXY</td></tr>
+      <tr><td><code>2026.10.29-policy-only.conf</code></td><td>三策略主体 + available 自动故障转移兜底</td></tr>
       <tr><td><code>5.17.conf</code></td><td>旧版配置，保留用于回滚</td></tr>
       <tr><td><code>2014.11.01QX.conf</code></td><td>完整版，规则更全</td></tr>
       <tr><td><code>README.md</code></td><td>仓库说明</td></tr>

@@ -24,7 +24,7 @@
 # 较新版（推荐日常用）
 https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2026.10.29-fast.conf
 
-# 三策略版（仅 DIRECT / REJECT / PROXY）
+# 三策略主体 + available 自动故障转移兜底
 https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2026.10.29-policy-only.conf
 
 # 旧版
@@ -39,7 +39,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 | 文件 | 行数 | 说明 |
 |---|---|---|
 | `2026.10.29-fast.conf` | 136 | 策略组快速版，兼容 QX 的 `[filter_remote]`，含 available 故障转移 |
-| `2026.10.29-policy-only.conf` | 122 | 三策略版：仅 DIRECT / REJECT / PROXY |
+| `2026.10.29-policy-only.conf` | 123 | 三策略主体 + available 自动故障转移兜底 |
 | `5.17.conf` | 158 | 旧版策略化配置，保留用于回滚 |
 | `2014.11.01QX.conf` | 220 | 完整版，含更多远程规则源与本地规则，适合细粒度控制 |
 | `index.html` | — | 在线介绍页（GitHub Pages） |
@@ -50,7 +50,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 |---|---|
 | `[general]` | 全局设置：网络检查、日志级别、超时 |
 | `[dns]` | DNS 服务器与排除列表 |
-| `[policy]` | 策略组：快速版使用；三策略版只使用内置 direct / reject / proxy |
+| `[policy]` | 策略组：快速版使用；三策略版使用内置 direct / reject / proxy，并以 available 兜底 |
 | `[server_remote]` | 远程节点订阅源 |
 | `[filter_remote]` | 远程分流规则源 |
 | `[rewrite_remote]` | 远程 URL 重写规则（部分旧配置使用） |
@@ -78,7 +78,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 ```
 Quantumult/
 ├── 2026.10.29-fast.conf        # QX 策略组快速版
-├── 2026.10.29-policy-only.conf # QX 三策略版
+├── 2026.10.29-policy-only.conf # QX 三策略 + 故障转移版
 ├── 5.17.conf                   # 旧版配置
 ├── 2014.11.01QX.conf    # 完整版配置
 ├── index.html           # 在线介绍页
