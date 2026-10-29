@@ -155,10 +155,10 @@ footer p+p{margin-top:6px}
 <div class="sec">
   <h2>📦 配置文件</h2>
   <div class="grid">
-    <div class="feat"><div class="t">🆕 2026.10.29-fast.conf</div><div class="desc">策略组快速版，136 行。保留 AI 自动、地区测速和 DIRECT/PROXY 选项。</div></div>
-    <div class="feat"><div class="t">🧩 2026.10.29-policy-only.conf</div><div class="desc">三策略版，123 行。只使用 DIRECT / REJECT / PROXY；SteamCN 直连，其余游戏平台代理。</div></div>
-    <div class="feat"><div class="t">📚 5.17.conf</div><div class="desc">旧版策略化配置，159 行，保留用于回滚。</div></div>
-    <div class="feat"><div class="t">📚 2014.11.01QX.conf</div><div class="desc">旧版完整配置，221 行，保留用于回滚。</div></div>
+    <div class="feat"><div class="t">🆕 2026.10.29-fast.conf</div><div class="desc">策略组快速版，135 行。保留 AI 自动、地区测速和 DIRECT/PROXY 选项。</div></div>
+    <div class="feat"><div class="t">🧩 2026.10.29-policy-only.conf</div><div class="desc">三策略版，122 行。只使用 DIRECT / REJECT / PROXY；SteamCN 直连，其余游戏平台代理。</div></div>
+    <div class="feat"><div class="t">📚 5.17.conf</div><div class="desc">旧版策略化配置，158 行，保留用于回滚。</div></div>
+    <div class="feat"><div class="t">📚 2014.11.01QX.conf</div><div class="desc">旧版完整配置，220 行，保留用于回滚。</div></div>
   </div>
 </div>
 
@@ -213,6 +213,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
     <p><strong>QX 转换说明：</strong>原 Shadowrocket 的 RULE-SET 已改写为 QX 的 <code>[filter_remote]</code>；AI 规则改用 QX 可解析的 <code>ai.list</code>。</p>
   </div>
   <ul class="nice">
+    <li>旧订阅链接已从 <code>[server_remote]</code> 移除，请添加你自己的订阅。</li>
     <li>远程规则源失效会导致部分站点走错策略，定期更新。</li>
     <li><code>[task_local]</code> 里的定时任务依赖具体服务，换机场后需自行调整。</li>
     <li>MITM 段默认只列了必要域名，可自行增删。</li>

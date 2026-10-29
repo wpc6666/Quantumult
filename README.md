@@ -38,10 +38,10 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 
 | 文件 | 行数 | 说明 |
 |---|---|---|
-| `2026.10.29-fast.conf` | 136 | 策略组快速版，兼容 QX 的 `[filter_remote]` |
-| `2026.10.29-policy-only.conf` | 123 | 三策略版：仅 DIRECT / REJECT / PROXY |
-| `5.17.conf` | 159 | 旧版策略化配置，保留用于回滚 |
-| `2014.11.01QX.conf` | 221 | 完整版，含更多远程规则源与本地规则，适合细粒度控制 |
+| `2026.10.29-fast.conf` | 135 | 策略组快速版，兼容 QX 的 `[filter_remote]` |
+| `2026.10.29-policy-only.conf` | 122 | 三策略版：仅 DIRECT / REJECT / PROXY |
+| `5.17.conf` | 158 | 旧版策略化配置，保留用于回滚 |
+| `2014.11.01QX.conf` | 220 | 完整版，含更多远程规则源与本地规则，适合细粒度控制 |
 | `index.html` | — | 在线介绍页（GitHub Pages） |
 
 ### 段落结构
@@ -65,6 +65,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 ## ⚠️ 注意事项
 
 - **本仓库不含任何节点信息**。`[server_local]` 只有占位，节点需从你自己的机场导入。
+- `[server_remote]` 中的旧订阅链接已移除，请在 QX 中添加你自己的订阅。
 - **QX 转换说明**：原 Shadowrocket 的 `Ai.yaml` 改为 QX 可解析的 `ai.list`；`RULE-SET` 改写为 `[filter_remote]`。
 - **远程规则源失效会导致部分站点走错策略**，请定期更新。
 - `[task_local]` 里的定时任务依赖具体服务，换机场后需自行调整。
