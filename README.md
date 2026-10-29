@@ -1,14 +1,14 @@
-# Quantumult 配置
+# Quantumult X 配置
 
-> Quantumult（圈）iOS 代理工具配置集 —— 策略组 + 远程/本地分流规则 + URL 重写 + MITM + 定时任务。
+> Quantumult X（圈 X）iOS 代理工具配置集 —— 策略组、远程/本地分流、URL 重写与 MITM。
 
 [![Platform](https://img.shields.io/badge/Platform-iOS-000000?logo=apple&logoColor=white)](https://apps.apple.com/us/app/quantumult/id1252015438)
 [![App](https://img.shields.io/badge/App-Quantumult-FF6B6B)](https://apps.apple.com/us/app/quantumult/id1252015438)
-[![Config](https://img.shields.io/badge/Config-2%20files-2ea44f)](#配置文件)
+[![Config](https://img.shields.io/badge/Config-4%20files-2ea44f)](#配置文件)
 
 **在线介绍页**：<https://wpc6666.github.io/Quantumult/>
 
-> ⚠️ **Quantumult ≠ Quantumult X**。本仓库是 Quantumult（旧版）格式，X 版需要另行转换。
+> 本仓库现在包含 QX 格式配置；旧版 `5.17.conf` 和 `2014.11.01QX.conf` 保留用于回滚。
 
 ---
 
@@ -22,9 +22,13 @@
 
 ```
 # 较新版（推荐日常用）
-https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/5.17.conf
+https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2026.10.29-fast.conf
 
-# 完整版
+# 三策略版（仅 DIRECT / REJECT / PROXY）
+https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2026.10.29-policy-only.conf
+
+# 旧版
+https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/5.17.conf
 https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01QX.conf
 ```
 
@@ -34,7 +38,9 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 
 | 文件 | 行数 | 说明 |
 |---|---|---|
-| `5.17.conf` | 159 | 较新版本，策略组与规则更精简，推荐日常使用 |
+| `2026.10.29-fast.conf` | 136 | 策略组快速版，兼容 QX 的 `[filter_remote]` |
+| `2026.10.29-policy-only.conf` | 123 | 三策略版：仅 DIRECT / REJECT / PROXY |
+| `5.17.conf` | 159 | 旧版策略化配置，保留用于回滚 |
 | `2014.11.01QX.conf` | 221 | 完整版，含更多远程规则源与本地规则，适合细粒度控制 |
 | `index.html` | — | 在线介绍页（GitHub Pages） |
 
@@ -44,10 +50,10 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 |---|---|
 | `[general]` | 全局设置：网络检查、日志级别、超时 |
 | `[dns]` | DNS 服务器与排除列表 |
-| `[policy]` | 策略组：手动选择 / 自动测速 / 直连 / 拒绝 |
+| `[policy]` | 策略组：快速版使用；三策略版只使用内置 direct / reject / proxy |
 | `[server_remote]` | 远程节点订阅源 |
 | `[filter_remote]` | 远程分流规则源 |
-| `[rewrite_remote]` | 远程 URL 重写规则 |
+| `[rewrite_remote]` | 远程 URL 重写规则（部分旧配置使用） |
 | `[server_local]` | 本地节点定义 |
 | `[filter_local]` | 本地分流规则 |
 | `[rewrite_local]` | 本地 URL 重写 |
@@ -59,6 +65,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 ## ⚠️ 注意事项
 
 - **本仓库不含任何节点信息**。`[server_local]` 只有占位，节点需从你自己的机场导入。
+- **QX 转换说明**：原 Shadowrocket 的 `Ai.yaml` 改为 QX 可解析的 `ai.list`；`RULE-SET` 改写为 `[filter_remote]`。
 - **远程规则源失效会导致部分站点走错策略**，请定期更新。
 - `[task_local]` 里的定时任务依赖具体服务，换机场后需自行调整。
 - `[mitm]` 默认只列了必要域名，可自行增删；开启解密前请确认信任对应证书。
@@ -69,7 +76,9 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
 
 ```
 Quantumult/
-├── 5.17.conf            # 较新版配置
+├── 2026.10.29-fast.conf        # QX 策略组快速版
+├── 2026.10.29-policy-only.conf # QX 三策略版
+├── 5.17.conf                   # 旧版配置
 ├── 2014.11.01QX.conf    # 完整版配置
 ├── index.html           # 在线介绍页
 └── README.md

@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#667eea">
-<title>Quantumult 配置 · 白澤 程</title>
-<meta name="description" content="Quantumult（圈）iOS 代理配置集：两份配置文件，含策略组、远程/本地分流规则、URL 重写、MITM 与定时任务。">
-<meta name="keywords" content="Quantumult,圈,iOS代理,配置文件,分流规则,policy,filter_remote,url rewrite">
+<title>Quantumult X 配置 · 白澤 程</title>
+<meta name="description" content="Quantumult X（圈 X）iOS 代理配置集：策略组快速版与 DIRECT/REJECT/PROXY 三策略版，含远程分流、URL 重写与 MITM。">
+<meta name="keywords" content="Quantumult X,圈X,iOS代理,配置文件,分流规则,policy,filter_remote,url rewrite">
 <meta name="author" content="白澤 程">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Quantumult 配置 · 白澤 程">
-<meta property="og:description" content="Quantumult（圈）iOS 代理配置集：两份配置文件，含策略组、远程/本地分流规则、URL 重写、MITM 与定时任务。">
+<meta property="og:title" content="Quantumult X 配置 · 白澤 程">
+<meta property="og:description" content="Quantumult X（圈 X）iOS 代理配置集：策略组快速版与 DIRECT/REJECT/PROXY 三策略版，含远程分流、URL 重写与 MITM。">
 <meta property="og:url" content="https://wpc6666.github.io/Quantumult/">
 <meta name="twitter:card" content="summary">
 <style>
@@ -139,12 +139,12 @@ footer p+p{margin-top:6px}
 <div class="wrap">
 
 <div class="hero">
-  <h1>Quantumult 配置</h1>
-  <p class="sub">Quantumult（圈）iOS 代理工具配置集。两份配置文件，含分流策略、远程规则、URL 重写、定时任务。</p>
+  <h1>Quantumult X 配置</h1>
+  <p class="sub">Quantumult X（圈 X）iOS 代理工具配置集。策略组快速版与三策略版，含远程分流、URL 重写与 MITM。</p>
   <div class="badges">
     <img src="https://img.shields.io/badge/Platform-iOS-000000?logo=apple&logoColor=white" alt="iOS">
-    <img src="https://img.shields.io/badge/App-Quantumult-FF6B6B" alt="Quantumult">
-    <img src="https://img.shields.io/badge/Config-2%20files-2ea44f" alt="配置数">
+    <img src="https://img.shields.io/badge/App-Quantumult%20X-FF6B6B" alt="Quantumult X">
+    <img src="https://img.shields.io/badge/Config-4%20files-2ea44f" alt="配置数">
   </div>
   <div class="cta">
     <a class="btn btn-p" href="#files">选择配置</a>
@@ -153,17 +153,19 @@ footer p+p{margin-top:6px}
 </div>
 
 <div class="sec">
-  <h2>📦 两份配置</h2>
+  <h2>📦 配置文件</h2>
   <div class="grid">
-    <div class="feat"><div class="t">🆕 5.17.conf</div><div class="desc">较新版本，159 行。策略组与规则更精简，适合日常使用。</div></div>
-    <div class="feat"><div class="t">📚 2014.11.01QX.conf</div><div class="desc">完整版，221 行。含更多远程规则源与本地规则，适合需要细粒度控制的场景。</div></div>
+    <div class="feat"><div class="t">🆕 2026.10.29-fast.conf</div><div class="desc">策略组快速版，136 行。保留 AI 自动、地区测速和 DIRECT/PROXY 选项。</div></div>
+    <div class="feat"><div class="t">🧩 2026.10.29-policy-only.conf</div><div class="desc">三策略版，123 行。只使用 DIRECT / REJECT / PROXY；SteamCN 直连，其余游戏平台代理。</div></div>
+    <div class="feat"><div class="t">📚 5.17.conf</div><div class="desc">旧版策略化配置，159 行，保留用于回滚。</div></div>
+    <div class="feat"><div class="t">📚 2014.11.01QX.conf</div><div class="desc">旧版完整配置，221 行，保留用于回滚。</div></div>
   </div>
 </div>
 
 <div class="sec" id="files">
   <h2>🚀 怎么用</h2>
   <ol class="steps">
-    <li>安装 <strong>Quantumult</strong>（注意：不是 Quantumult X，两者配置格式不同）。</li>
+    <li>安装 <strong>Quantumult X</strong>（圈 X）。</li>
     <li>把配置文件下载到本地，或复制链接。</li>
     <li>App 内「设置 → 配置文件」导入。</li>
     <li>选中配置 → 回到首页打开开关。</li>
@@ -171,10 +173,14 @@ footer p+p{margin-top:6px}
   <div class="note">
     <strong>订阅地址</strong>（把文件名换成你要的那个）：
   </div>
-  <pre><code><span class="cm"># 较新版</span>
-https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/5.17.conf
+  <pre><code><span class="cm"># 策略组快速版</span>
+https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2026.10.29-fast.conf
 
-<span class="cm"># 完整版</span>
+<span class="cm"># 三策略版（仅 DIRECT / REJECT / PROXY）</span>
+https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2026.10.29-policy-only.conf
+
+<span class="cm"># 旧版</span>
+https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/5.17.conf
 https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01QX.conf</code></pre>
 </div>
 
@@ -185,10 +191,10 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
     <tbody>
       <tr><td><code>[general]</code></td><td>全局设置：网络检查、日志级别、超时</td></tr>
       <tr><td><code>[dns]</code></td><td>DNS 服务器与排除列表</td></tr>
-      <tr><td><code>[policy]</code></td><td>策略组：手动选择 / 自动测速 / 直连 / 拒绝</td></tr>
+      <tr><td><code>[policy]</code></td><td>策略组：快速版使用；三策略版只使用内置 direct / reject / proxy</td></tr>
       <tr><td><code>[server_remote]</code></td><td>远程节点订阅源</td></tr>
       <tr><td><code>[filter_remote]</code></td><td>远程分流规则源</td></tr>
-      <tr><td><code>[rewrite_remote]</code></td><td>远程 URL 重写规则</td></tr>
+      <tr><td><code>[rewrite_remote]</code></td><td>远程 URL 重写规则（部分旧配置使用）</td></tr>
       <tr><td><code>[server_local]</code></td><td>本地节点定义</td></tr>
       <tr><td><code>[filter_local]</code></td><td>本地分流规则</td></tr>
       <tr><td><code>[rewrite_local]</code></td><td>本地 URL 重写</td></tr>
@@ -204,7 +210,7 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
     <p><strong>本仓库不含任何节点信息。</strong><code>[server_local]</code> 段只有占位，节点需从你自己的机场导入。</p>
   </div>
   <div class="warn">
-    <p><strong>Quantumult 与 Quantumult X 不通用。</strong>本仓库是 Quantumult（旧版）配置格式，X 版需要转换。</p>
+    <p><strong>QX 转换说明：</strong>原 Shadowrocket 的 RULE-SET 已改写为 QX 的 <code>[filter_remote]</code>；AI 规则改用 QX 可解析的 <code>ai.list</code>。</p>
   </div>
   <ul class="nice">
     <li>远程规则源失效会导致部分站点走错策略，定期更新。</li>
@@ -218,7 +224,9 @@ https://raw.githubusercontent.com/wpc6666/Quantumult/refs/heads/main/2014.11.01Q
   <div class="tw"><table>
     <thead><tr><th>文件</th><th>说明</th></tr></thead>
     <tbody>
-      <tr><td><code>5.17.conf</code></td><td>较新配置，推荐日常使用</td></tr>
+      <tr><td><code>2026.10.29-fast.conf</code></td><td>策略组快速版</td></tr>
+      <tr><td><code>2026.10.29-policy-only.conf</code></td><td>三策略版：仅 DIRECT / REJECT / PROXY</td></tr>
+      <tr><td><code>5.17.conf</code></td><td>旧版配置，保留用于回滚</td></tr>
       <tr><td><code>2014.11.01QX.conf</code></td><td>完整版，规则更全</td></tr>
       <tr><td><code>README.md</code></td><td>仓库说明</td></tr>
     </tbody>
